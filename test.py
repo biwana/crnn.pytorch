@@ -22,7 +22,7 @@ model.load_state_dict(torch.load(model_path))
 converter = utils.strLabelConverter(alphabet)
 
 transformer = dataset.resizeNormalize((100, 32))
-with open('east-results', 'w') as csvfile:
+with open('east-results.txt', 'w') as csvfile:
     writer = csv.writer(csvfile, delimiter=' ')
     for l in labels:
         image = Image.open(l).convert('L')
