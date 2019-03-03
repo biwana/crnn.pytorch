@@ -25,14 +25,14 @@ transformer = dataset.resizeNormalize((100, 32))
 for l in labels:
     print(l)
     image = Image.open(l).convert('L')
-    image = transformer(image)
+    im = transformer(image)
     if torch.cuda.is_available():
-        image = image.cuda()
-    image = image.view(1, *image.size())
-    imavar = Variable(image)
+        im = im.cuda()
+    ima = im.view(1, *im.size())
+    im = Variable(im)
 
     model.eval()
-    preds = model(imavar)
+    preds = model(im)
 
     _, preds = preds.max(2)
     preds = preds.transpose(1, 0).contiguous().view(-1)
