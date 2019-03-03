@@ -11,7 +11,7 @@ import models.crnn as crnn
 
 model_path = './data/crnn.pth'
 alphabet = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUV'
-labels = np.genfromtxt("title30cat-east-cut-test.txt", delimiter=" ", dtype=str)[:5]
+labels = np.genfromtxt("title30cat-east-cut-test.txt", delimiter=" ", dtype=str)#[:5]
 
 model = crnn.CRNN(32, 1, 37, 256)
 if torch.cuda.is_available():
