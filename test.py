@@ -42,4 +42,4 @@ for l in labels:
     sim_pred = converter.decode(preds.data, preds_size.data, raw=False)
     print('%-20s => %-20s' % (raw_pred, sim_pred))
     image.close()
-    np.savetxt("output/%s.txt"%l, [[sim_pred]])
+    np.savetxt("output/%s.txt"%l, [[sim_pred]], fmt='%s')
