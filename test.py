@@ -28,7 +28,7 @@ for l in labels:
     im = transformer(image)
     if torch.cuda.is_available():
         im = im.cuda()
-    ima = im.view(1, *im.size())
+    im = im.view(1, *im.size())
     im = Variable(im)
 
     model.eval()
